@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 locals {
-  name_tag = "${var.project_name}-${var.environment}"
+  name_tag = "${var.project_name}-${var.environment_name}"
 }
 
 
@@ -13,7 +13,7 @@ resource "aws_instance" "instance" {
 
   tags = {
     project_name = var.project_name
-    environment_name = var.environment
+    environment_name = var.environment_name
     Name = local.name_tag
   }
 }
